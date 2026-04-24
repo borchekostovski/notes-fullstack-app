@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CacheModule } from './cache/cache.module';
 import { NotesModule } from './notes/notes.module';
 
 @Module({
@@ -20,6 +21,7 @@ import { NotesModule } from './notes/notes.module';
         synchronize: true,
       }),
     }),
+    CacheModule,
     NotesModule,
   ],
 })
